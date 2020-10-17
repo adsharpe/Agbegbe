@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC set up -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/AGBEGBE?serverTimezone=UTC</property>
+		<property name="hibernate.connection.username">agbegbeadmin</property>
+		<property name="hibernate.connection.password">p4ssw0rd</property>
+		
+		<!-- Hibernate set up -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		
+		<property name="show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+		
+		<!-- Tell Hibernate where our mappings are -->
+		
+		<!-- Annotation Mappings -->
+		<mapping class="com.ironrookcomputing.hibernate.beans.ProfileType"/>
+		<mapping class="com.ironrookcomputing.hibernate.beans.Setting"/>
+		<mapping class="com.ironrookcomputing.hibernate.beans.User"/>
+		<mapping class="com.ironrookcomputing.hibernate.beans.Login"/>
+		<mapping class="com.ironrookcomputing.hibernate.beans.Title"/>
+		<mapping class="com.ironrookcomputing.hibernate.beans.Suffix"/>
+	</session-factory>
+</hibernate-configuration>
