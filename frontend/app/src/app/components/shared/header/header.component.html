@@ -1,0 +1,10 @@
+<mat-toolbar class="header">
+    <a routerLink="">{{siteName}}</a>
+    <span class="spacer"></span>
+    <div *ngIf="(isLoggedIn$ | async)">
+        <span *ngFor="let item of menuItems">
+            <a mat-button routerLink={{item.url}}>{{item.name}}</a>
+        </span>
+        <button mat-button color="primary" (click)='logout()'>Logout</button>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,49 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card class="contact-card" fxFlex="25">
+        <form class="contact-form" #contactForm="ngForm">
+            <h2>Contact Us</h2>
+            <span>We'd love to hear from you. Please drop us a line if you have a query.</span>
+            <br>
+            <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput required id="firstname"
+            type="text" placeholder="First Name"
+            ngModel name="firstname" #firstname="ngModel">
+            <small class="text-danger"
+            [class.d-none]="firstname.valid || firstname.untouched">First Name is a required field.</small>
+            </mat-form-field>
+            <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput required id="lastname"
+            type="text" placeholder="Last Name"
+            ngModel name="lastname" #lastname="ngModel">
+            <small class="text-danger"
+            [class.d-none]="lastname.valid || lastname.untouched">Last Name is a required field.</small>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <mat-label>Email Address</mat-label>
+            <input matInput required id="emailaddress"
+            type="text" placeholder="Email Address"
+            ngModel name="emailaddress" #emailaddress="ngModel">
+            <small class="text-danger"
+            [class.d-none]="emailaddress.valid || emailaddress.untouched">Email Address is a required field.</small>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <mat-label>Message</mat-label>
+            <input matInput  required id="message"
+            type="textarea" placeholder="Password"
+            ngModel name="message" #message="ngModel">
+            <small class="text-danger"
+            [class.d-none]="message.valid || message.untouched">Message is a required field.</small>
+            </mat-form-field>
+        </form>
+        <mat-card-actions>
+            <button mat-raised-button color="primary"
+            [disabled]="contactForm.form.invalid"
+            (click)="sendMessage()"
+            type="submit">Send</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

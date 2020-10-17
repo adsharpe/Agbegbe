@@ -1,0 +1,33 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card class="login-card" fxFlex="25">
+        <form class="login-form" #loginForm="ngForm">
+            <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput required id="username"
+            type="text" placeholder="Username"
+            ngModel name="username" #username="ngModel">
+            <small class="text-danger"
+            [class.d-none]="username.valid || username.untouched">Username is a required field.</small>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput  required id="password"
+            type="password" placeholder="Password"
+            ngModel name="password" #password="ngModel"
+            (keyup.enter)="submitLogin(username,password)">
+            <small class="text-danger"
+            [class.d-none]="password.valid || password.untouched">Password is a required field.</small>
+            </mat-form-field>
+            <br>
+            <mat-checkbox id="showpassword" color="warn"
+            (click)="togglePrivacy()">Show Password</mat-checkbox>
+        </form>
+        <mat-card-actions>
+            <button mat-raised-button color="primary"
+            [disabled]="loginForm.form.invalid"
+            (click)="submitLogin(username,password)"
+            type="submit">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
