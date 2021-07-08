@@ -1,0 +1,4 @@
+CREATE DATABASE AGBEGBE;
+CREATE USER 'agbegbeadmin'@'localhost' IDENTIFIED BY 'p4ssw0rd';
+GRANT ALL PRIVILEGES ON AGBEGBE.* TO 'agbegbeadmin'@'localhost';
+FLUSH PRIVILEGES;
