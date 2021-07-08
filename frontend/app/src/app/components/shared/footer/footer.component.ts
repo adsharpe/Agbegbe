@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteSettings } from 'src/app/class/site-settings';
 import { SiteSettingsService } from 'src/app/services/site-settings.service';
 
 @Component({
@@ -11,13 +12,11 @@ export class FooterComponent implements OnInit {
   constructor(private siteSettingsService : SiteSettingsService) {
     this.siteSettingsService.getSiteSettings().subscribe(
       resp => {
-      this.siteName = resp.name;
+      this.siteSettings = resp;
     });
   }
 
-  public siteName : string;
-
-  public year : number;
+  public siteSettings: SiteSettings;
 
   ngOnInit(): void {}
 

@@ -23,6 +23,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { SettingsService } from './services/settings.service';
 import { SiteSettingsService } from './services/site-settings.service';
 import { ProfileComponent } from './components/unshared/profile/profile.component';
+import { AccountComponent } from './components/unshared/account/account.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProfileComponent } from './components/unshared/profile/profile.componen
     SignupComponent,
     NewsfeedComponent,
     ProfileComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,33 +10,37 @@ import { map } from 'rxjs/operators';
 export class SiteSettingsService {
 
   constructor(private settingsService : SettingsService) {}
-
-  private defaultSiteName : string = 'Agbegbe Community Software';
   
+  private defaultSiteSettings : SiteSettings = {
+    name : `Agbegbe Social Media Software`,
+    logo : null,
+    copyrightHolder : `Iron Rook Computing, LLC`,
+    copyrightYear : 0
+  };
   private siteSettings : SiteSettings = null;
   
   getSiteSettings() : Observable<SiteSettings> {
     if(this.siteSettings === null) {
-      return this.settingsService.getSetting('site-name').pipe(
+      this.siteSettings = this.defaultSiteSettings;
+
+      console.log("Getting site name.");
+
+      this.settingsService.getSetting('site-name').pipe(
         map(
           resp => {
             console.log('siteSettings=', this.siteSettings);
-            this.siteSettings = new SiteSettings();
 
-            if(resp === null) {
-              console.log('site-name=', this.defaultSiteName);
-              this.siteSettings.name = this.defaultSiteName;
-            } else {
+            if(resp !== null) {
               console.log('site-name=', resp.value);
               this.siteSettings.name = resp.value;
             }
-            return this.siteSettings;
+          },
+          err => {
+            console.log("Error getting site name.");
         })
       );
-    } else {
-      console.log('siteSettings=', this.siteSettings);
-      return of(this.siteSettings);
     }
+    return of(this.siteSettings);
   }
 
 }

@@ -2,17 +2,11 @@
     <div class="search-bar">
         <form>
             <div class="">
-                <input required ngModel name="funeralHomeQuery" #funeralHomeQuery="ngModel" id="funeralHomeQuery"
+                <input required ngModel name="searchQuery" #searchQuery="ngModel" id="searchQuery"
                        type="text" class="form-control" placeholder="Type here..."
-                       aria-label="Funeral Home Search" aria-describedby="basic-addon2"
-                       (keyup.enter)="doSearch(funeralHomeQuery)">
-                <select name="servicetype">
-                    <option *ngFor="let service of serviceType" value={{service.id}}>{{service.name}}</option>
-                </select>
-                <select name="sortby">
-                    <option *ngFor="let sort of sortBy" value={{sort.id}}>{{sort.name}}</option>
-                </select>
-                <button class="btn btn-outline-secondary" (click)="doSearch(funeralHomeQuery)"
+                       aria-label="Search" aria-describedby="basic-addon2"
+                       (keyup.enter)="doSearch(searchQuery)">
+                <button class="btn btn-outline-secondary" (click)="doSearch(searchQuery)"
                             type="submit">Search</button>
             </div>
         </form>

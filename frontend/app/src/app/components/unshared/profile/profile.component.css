@@ -1,0 +1,31 @@
+.page {
+    padding: 2em;
+}
+
+.main {
+
+}
+
+.header {
+    display: block;
+}
+
+.sub-header {
+    display: block;
+}
+
+.sidebar {
+    width: 15%;
+    float: left;
+    display: block;
+}
+
+.group {
+    display: block;
+}
+
+.content {
+    width: 80%;
+    float: right;
+    display: block;
+}

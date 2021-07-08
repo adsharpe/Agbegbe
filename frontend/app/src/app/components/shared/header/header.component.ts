@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   public isLoggedIn$ : Observable<boolean>;
 
   menuItems : MenuItem[] = [
-    { name: 'Profile', url: '', component: '' },
+    { name: 'Profile', url: '/profile/' + this.authService.getUsername(), component: '' },
     { name: 'Create', url: '', component: '' },
     { name: 'Messenger', url: '', component: '' },
     { name: 'Notifications', url: '', component: '' },

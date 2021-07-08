@@ -109,6 +109,10 @@ export class AuthService {
     return !!this.tokenService.getToken(this.user_refresh_name);
   }
 
+  getUsername() : string {
+    return this.tokenService.getToken(this.user_name);
+  }
+
   clearUser() {
     this.tokenService.removeToken(this.user_token_name);
     this.tokenService.removeToken(this.user_refresh_name);
